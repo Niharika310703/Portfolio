@@ -5,57 +5,68 @@
                       <meta charset="UTF-8">
                       <meta name="viewport" content="width=device-width, initial-scale=1.0">
                       <link rel="stylesheet" href="style.css">
-                      <title>My Portfolio</title>
+                      <link rel="icon" type="image/png" href="your-icon.png">
+
+                      <title>Niharika Portfolio</title>
 
 </head>
 
 <body>
   <!-- Header -->
-  <section id="header">
-    <div class="header container">
-      <div class="nav-bar">
-        <div class="brand">
-          <a href="#hero">
-            <h1><span>P</span>enugonda<span>N</span>iharika</h1>
-            <p>Computer Science Student | Aspiring Developer</p>
-          </a>
+  <!-- Header -->
+<section id="header">
+  <div class="header container">
+    <div class="nav-bar">
+      <div class="brand">
+        <a href="#hero">
+          <h1 class="jump-text">
+            <span style="color:red;">P</span >enugonda <span style="color:red;">N</span>iharika
+          </h1>
+          <p class="fade-text">Computer Science Student | Aspiring Developer</p>
+        </a>
+      </div>
+      <div class="nav-list">
+        <div class="hamburger">
+          <div class="bar"></div>
         </div>
-        <div class="nav-list">
-          <div class="hamburger">
-            <div class="bar"></div>
-          </div>
-          <ul>
-            <li><a href="#hero" data-after="Home">Home</a></li>
-            <li><a href="#services" data-after="Service">Skills</a></li>
-            
-            <li><a href="#about" data-after="About">About</a></li>
-            <li><a href="#contact" data-after="Contact">Contact</a></li>
-          </ul>
-        </div>
+        <ul>
+          <li><a href="#hero" data-after="Home">Home</a></li>
+          <li><a href="#services" class="nav-hover" data-after="Service">Skills</a></li>
+          <li><a href="#about" class="nav-hover" data-after="About">About</a></li>
+          <li><a href="#contact" class="nav-hover" data-after="Contact">Contact</a></li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
   <!-- End Header -->
 
 
   <!-- Hero Section  -->
   <section id="hero">
-    <div class="hero container">
-      <div>
-        <h1>Hello, <span></span></h1>
-        <h1>I am  <span></span></h1>
-        <h1>Niharika <span></span></h1>
-        <a href="#projects" type="button" class="cta">Projects</a>
-      </div>
+  <div class="hero container">
+    <div class="hero-left">
+      <h1>Hello, <span></span></h1>
+      <h1>I am  <span></span></h1>
+      <h1>Niharika <span></span></h1>
+      <a href="#projects" type="button" class="cta">Projects</a>
     </div>
-  </section>
+    <div class="hero-right">
+      <h2>Passionate AI/ML Developer and Data Scientist</h2>
+    </div>
+  </div>
+</section>
   <!-- End Hero Section  -->
 
   <!-- Service Section -->
   <section id="services">
     <div class="services container">
       <div class="service-top">
-        <h1 class="section-title">Sk<span>i</span>lls</h1>
+       <h1 class="section-title">
+  <span>S</span><span>K</span><span>I</span><span>L</span><span>L</span><span>S</span>
+</h1>
+
       </div>
       <div class="pluse-effect">
        <div class="service-bottom">
@@ -84,7 +95,8 @@
 <section id="projects" class="projects">
   <div class="container">
     <div class="project-top">
-    <h1 class="section-title">My <span>P</span>rojects </h1>
+    <h1 class="section-title" style="color:white;">My <br><span>
+      Projects </span></h1>
   </div>
     <div class="projects-container">
 
@@ -110,16 +122,7 @@
         </div>
       </div>
 
-      <!-- Project Item 3 -->
-      <div class="project-item">
-        <img src="path/to/project-image3.jpg" alt="Project 3">
-        <div class="project-info">
-          <h2>Real-Time Chat Application using MERN</h2>
-          <p>The application supports multiple users, instant messaging, and real-time updates using WebSocket.
-            Implemented user authentication, message encryption, and a responsive user interface to ensure a seamless user experience.</p>
-          <a href="link-to-project3" class="cta">View Project</a>
-        </div>
-      </div>
+    
 
       <!-- Add more project items as needed -->
 
@@ -138,9 +141,9 @@
       <div class="col-right">
         <h1 class="section-title">About <span>me</span></h1>
         <h2>Student</h2>
-        <p>Hey,<br>I am Penugonda Niharika. I'm a 4th-year Integrated MTech student at <br> VIT AP University.<br> I am passionate about machine learning and software development and Web Developemnt<br>
-          My strenght is multitasking and handling the pressure and time management
-        <a href="#" class="cta">Download Resume</a>
+        <p>Hey,<br>I am Penugonda Niharika. I'm a Pre-Final year Integrated MTech Computer Scinece student at <br> VIT AP University.<br><br> I am passionate about Machine Learning and Software Development and Web Developement<br><br>
+          My strenghts are Strategic Time management, Multitasking, Adpative Problem Solving skills.<br>
+        <a href="Niharika.pdf" class="cta">Download Resume</a>
       </div>
     </div>
   </section>
@@ -206,5 +209,40 @@
   <!-- End Footer -->
   <script src="./app.js"></script>
 </body>
+<script>
+  window.addEventListener("scroll", function () {
+    let header = document.getElementById("header");
+    let brandText = document.querySelector(".jump-text");
+    
+    if (window.scrollY > 50) {
+      header.classList.add("hidden-header"); // Hide header on scroll
+    } else {
+      header.classList.remove("hidden-header"); // Show header on home page
+      brandText.classList.add("animate"); // Trigger Jumping Animation
+    }
+  });
+
+  // Trigger jumping effect one letter at a time
+  document.addEventListener("DOMContentLoaded", function () {
+    let letters = document.querySelectorAll(".jump-text span");
+    letters.forEach((letter, index) => {
+      setTimeout(() => {
+        letter.style.animation = "jump 0.5s ease-in-out";
+      }, index * 100); // Delay for staggered effect
+    });
+  });
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    let letters = document.querySelectorAll(".section-title span");
+    
+    letters.forEach((letter, index) => {
+      setTimeout(() => {
+        letter.style.animation = "bounce 1.5s infinite alternate ease-in-out, color-flash 1s infinite alternate";
+      }, index * 100);
+    });
+  });
+</script>
+
+
 
 </html>
